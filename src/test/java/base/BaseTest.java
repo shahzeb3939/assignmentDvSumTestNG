@@ -17,6 +17,7 @@ public class BaseTest {
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://devqa.dvsum.com/login");
@@ -29,8 +30,8 @@ public class BaseTest {
         dashboard = new DashboardPage(driver);
     }
 
-    @AfterClass
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterClass
+//    public void tearDown(){
+//        driver.quit();
+//    }
 }

@@ -6,18 +6,19 @@ import org.openqa.selenium.WebDriver;
 public class DashboardPage {
     private WebDriver driver;
 
+    private By dataCatalog = By.xpath("//span[contains(.,'Data Catalog')]");
+    private By columnDictionaryLink = By.xpath("//a[@href='/dictionary/column']");
+
     public DashboardPage(WebDriver driver){
         this.driver = driver;
     }
 
-    private By firstDot = By.xpath("//i[@class='fa fa-ellipsis-h white bigger-150 pull-right']");
-    private By secondDot = By.xpath("//i[@class='fa fa-ellipsis-h blue bigger-200 uv-ellipses-icon']");
-
-    public void clickFirst(){
-        driver.findElement(firstDot).click();
+    public void clickDataCatalog(){
+        driver.findElement(dataCatalog).click();
     }
 
-    public void clickSecond(){
-        driver.findElement(secondDot).click();
+    public ColumnDictionaryPage clickColumnDictionary(){
+        driver.findElement(columnDictionaryLink).click();
+        return new ColumnDictionaryPage(driver);
     }
 }
