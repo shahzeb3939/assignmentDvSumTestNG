@@ -29,9 +29,9 @@ public class BaseTest {
 
         dashboard = new DashboardPage(driver);
     }
+    @AfterClass
+    public void tearDown(){
+        driver.quit();
+    }
 
-//    @AfterClass
-//    public void tearDown(){
-//        driver.quit();
-//    }
 }
