@@ -15,17 +15,12 @@ public class FirstAction {
         this.driver = driver;
     }
     public void firstMethod() {
-        System.out.println("In firstMethod of FirstAction.");
-        System.out.println(FirstComponent.firstInteger);
+//        System.out.println("In firstMethod of FirstAction.");
+//        System.out.println(FirstComponent.firstInteger);
 
-        System.out.println(this.driver.findElement(dataCatalog).getText());
-        this.driver.get("https://devqa.dvsum.com/dictionary/column");
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-        this.driver.findElement(dropdownView).click();
+        System.out.println(driver.findElement(dataCatalog).getText());
+        driver.get("https://devqa.dvsum.com/dictionary/column");
+        driver.findElement(dropdownView).click();
 
 
     }
