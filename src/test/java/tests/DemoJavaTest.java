@@ -8,7 +8,8 @@ public class DemoJavaTest extends BaseTest {
 
     @Test
     public void demoJavaTest(){
-        FirstAction.firstMethod();
-        webDriver.getDriver().get("https://www.google.com/");
+        FirstAction firstAction = new FirstAction(webDriver.getDriver());
+        firstAction.firstMethod();
+
     }
 }

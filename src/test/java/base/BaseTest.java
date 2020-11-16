@@ -11,16 +11,16 @@ import pages.LoginPage;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
-    protected Driver webDriver;
+    public Driver webDriver;
     protected DashboardPage dashboard;
     protected BaseComponent baseComponent;
 
     @BeforeClass
     public void setUp(){
         webDriver = new Driver();
-//        driver.manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
-//        driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
-//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        webDriver.getDriver().manage().timeouts().setScriptTimeout(5, TimeUnit.SECONDS);
+//        webDriver.getDriver().manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+        webDriver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.getDriver().get("https://devqa.dvsum.com/login");
 
         LoginPage login = new LoginPage(webDriver.getDriver());
