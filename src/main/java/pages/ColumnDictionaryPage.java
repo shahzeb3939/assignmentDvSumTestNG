@@ -71,8 +71,7 @@ public class ColumnDictionaryPage {
         nonFavouriteViewsList.forEach((listItem) -> {
             if(listItem.getText().equals(favourite)){
                 listItem.click();
-                WebDriverWait wait = new WebDriverWait(driver, 5);
-                wait.until(ExpectedConditions.visibilityOfElementLocated(favouriteViewButton));
+                driver.navigate().refresh();
                 driver.findElement(favouriteViewButton).click();
             }
         });
